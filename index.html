@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#F4ACB7" />
+  <title>Untukmu — dari aku</title>
+  <meta name="description" content="Surat kecil buat kamu, dari aku." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Libraries (CDN) -->
+  <!-- anime.js v4 — SVG letter + scroll animation -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs@4.4.1/lib/anime.iife.min.js" defer></script>
+  <!-- Swiper — photo carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.2.0/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12.2.0/swiper-bundle.min.js" defer></script>
+  <!-- PhotoSwipe — lightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.umd.min.js" defer></script>
+  <!-- canvas-confetti — celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+  <!-- tsParticles — floating hearts background -->
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@4.1.3/tsparticles.confetti.bundle.min.js" defer></script>
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Loading state -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-heart"></div>
+  </div>
+
+  <!-- Floating background particles (hearts) -->
+  <div id="tsparticles" aria-hidden="true"></div>
+
+  <!-- Music player (bottom-right floating) -->
+  <button
+    id="music-toggle"
+    class="music-toggle"
+    type="button"
+    aria-label="Putar/jeda musik"
+    aria-pressed="false"
+    hidden
+  >
+    <span class="music-icon" data-icon="play"></span>
+  </button>
+  <audio id="bg-music" loop preload="none"></audio>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero" aria-label="Pembuka">
+    <div class="hero-inner">
+      <p class="hero-eyebrow" data-anim="fade-up">Dari aku, untukmu</p>
+      <h1 class="hero-title" aria-label="Untukmu">
+        <!-- SVG letters injected by JS for stroke + fill animation -->
+        <svg
+          class="hero-svg"
+          viewBox="0 0 600 160"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+        ></svg>
+      </h1>
+      <p class="hero-subtitle" data-anim="fade-up" data-anim-delay="200"></p>
+      <p class="hero-signature" data-anim="fade-up" data-anim-delay="400"></p>
+      <a href="#letter" class="hero-scroll" data-anim="fade-up" data-anim-delay="600" aria-label="Gulir ke bawah">
+        <span class="hero-scroll-text">mulai dari sini</span>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M12 4v16M5 13l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== LETTER (typewriter) ========== -->
+  <section class="letter" id="letter" aria-label="Surat untukmu">
+    <div class="letter-card">
+      <p class="letter-eyebrow">Untukmu, dengan pelan-pelan</p>
+      <div class="letter-body" id="letter-body"></div>
+    </div>
+  </section>
+
+  <!-- ========== TIMELINE (polaroid memory) ========== -->
+  <section class="timeline" id="timeline" aria-label="Kenangan kita">
+    <header class="section-header">
+      <p class="section-eyebrow">keping-keping kenangan</p>
+      <h2 class="section-title">Waktu-waktu kecil yang aku simpan</h2>
+    </header>
+    <div class="timeline-grid" id="timeline-grid">
+      <!-- polaroid cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta" id="cta" aria-label="Pertanyaan">
+    <div class="cta-card">
+      <h2 class="cta-question" id="cta-question"></h2>
+      <p class="cta-sub">Tekan "Mau" kalau kamu masih mau di sini. 💕</p>
+      <div class="cta-buttons">
+        <button id="cta-yes" class="cta-yes" type="button"></button>
+        <button id="cta-no" class="cta-no" type="button">Nanti dulu</button>
+      </div>
+      <p id="cta-success" class="cta-success" hidden></p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <p>dibuat dengan sayang, khusus untuk kamu.</p>
+    <p class="site-footer-meta">forked &amp; customizable via <code>customize.json</code></p>
+  </footer>
+
+  <!-- PhotoSwipe root (auto-mounted) -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <button class="pswp__button pswp__button--close" title="Tutup (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Bagikan"></button>
+          <button class="pswp__button pswp__button--fs" title="Layar penuh"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__counter"></div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Sebelumnya"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Berikutnya"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App script (loads customize.json + renders) -->
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
