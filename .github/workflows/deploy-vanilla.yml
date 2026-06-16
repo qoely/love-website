@@ -2,7 +2,7 @@ name: Deploy vanilla-static to GitHub Pages
 
 on:
   push:
-    branches: [vanilla-static]
+    branches: [vanilla-static, main]
   workflow_dispatch:
 
 permissions:
