@@ -1,0 +1,80 @@
+{
+  "recipient": {
+    "name": "Kamu",
+    "nickname": "sayang"
+  },
+  "hero": {
+    "title": "Untukmu",
+    "subtitle": "yang sudah menemani hari-hariku",
+    "signature": "dengan sayang"
+  },
+  "timeline": [
+    {
+      "date": "Hari pertama",
+      "title": "Saat kita mulai kenal",
+      "caption": "Waktu itu aku belum nyangka, kalau nanti kita sampai sejauh ini.",
+      "image": "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800&q=80&auto=format&fit=crop"
+    },
+    {
+      "date": "Momen kecil",
+      "title": "Tawa hal-hal sepele",
+      "caption": "Yang bikin aku sadar, aku nyaman banget sama kamu.",
+      "image": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80&auto=format&fit=crop"
+    },
+    {
+      "date": "Hari tenang",
+      "title": "Diam-diam bareng",
+      "caption": "Kita gak ngomong apa-apa, tapi semuanya udah cukup.",
+      "image": "https://images.unsplash.com/photo-1522098635833-216c03d80128?w=800&q=80&auto=format&fit=crop"
+    },
+    {
+      "date": "Hari hujan",
+      "title": "Berteduh bareng",
+      "caption": "Hujan deras, kopi panas, dan kamu. Udah lebih dari cukup.",
+      "image": "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?w=800&q=80&auto=format&fit=crop"
+    },
+    {
+      "date": "Perjalanan",
+      "title": "Jalan tanpa tujuan",
+      "caption": "Yang penting bukan destinasinya, tapi kamu yang ada di sebelah.",
+      "image": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&q=80&auto=format&fit=crop"
+    },
+    {
+      "date": "Hari ini",
+      "title": "Bersyukur, masih di sini",
+      "caption": "Aku cuma mau bilang makasih. Sudah ya, segitu aja.",
+      "image": "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=800&q=80&auto=format&fit=crop"
+    }
+  ],
+  "letter": [
+    "Hai.",
+    "Aku bukan orang yang jago merangkai kata, tapi malam ini aku pengen coba bilang sesuatu yang udah lama banget aku simpen.",
+    "Makasih ya, udah ada. Bukan cuma di hari-hari yang gampang, tapi juga di hari-hari yang bikin aku pengen nyerah sendiri.",
+    "Kadang aku mikir, gimana ya kalau dulu aku gak ketemu kamu. Mungkin aku masih baik-baik aja, tapi aku juga tahu — hidupku gak akan sehangat sekarang.",
+    "Jadi ini bukan surat cinta yang dramatis. Bukan juga janji-janji besar. Cuma pengen kamu tahu, kalau buat aku, kamu itu rumah. Tempat aku boleh capek, boleh diam, boleh jadi diri sendiri.",
+    "Kalau suatu hari kamu baca ini lagi, semoga kamu senyum dan bilang, 'iya, kita masih di sini.'",
+    "Selalu begitu, ya."
+  ],
+  "cta": {
+    "question": "Kamu mau terus bareng aku?",
+    "yesLabel": "Mau 💕",
+    "noMessages": [
+      "Yakin nih? 🥺",
+      "Aku mikir lho...",
+      "Aku sedih nih :(",
+      "Oke deh, aku tunggu...",
+      "Coba dipikirin lagi 💖"
+    ],
+    "successMessage": "Aku seneng banget. Yuk lanjut bareng 🤍"
+  },
+  "music": {
+    "src": "",
+    "title": "Lagu kita",
+    "autoplayMuted": true
+  },
+  "meta": {
+    "language": "id",
+    "createdAt": "2026-06-16",
+    "purpose": "personal-appreciation"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# React branch
+vanilla-static/.cache/
+react-interactive/.vite/
+
+# Local env
+.env
+.env.local
