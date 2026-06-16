@@ -1,9 +1,11 @@
 name: Deploy React to GitHub Pages
 
 on:
-  push:
-    branches: [react-interactive, main]
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/deploy-react.yml'
 
 permissions:
   contents: read
@@ -11,15 +13,17 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: react-pages
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout react-interactive
         uses: actions/checkout@v4
+        with:
+          ref: react-interactive
 
       - name: Setup Node
         uses: actions/setup-node@v4
