@@ -1,28 +1,70 @@
 # Love Website — Personal Romantic Letter
 
-Personal romantic letter website, built as reusable template. Use case: pure appreciation — "terima kasih sudah menemani sejauh ini", bukan anniversary/proposal/valentine formal. Bahasa Indonesia.
+Personal romantic letter website untuk pure appreciation ("terima kasih sudah menemani"), bukan anniversary/proposal/valentine formal. Bahasa Indonesia. Two branches dengan **shared `customize.json` schema** — no code edit untuk personalization.
 
 ## Branches
 
-| Branch | Stack | Use When |
-|--------|-------|----------|
-| `vanilla-static` | HTML/CSS/JS + CDN libs | Production deploy, fastest load, GitHub Pages. Zero build step. |
-| `react-interactive` | React + Vite + Framer Motion | Dev iteration, hot reload, component reuse. Build step. |
+| Branch | Status | Use |
+|--------|--------|-----|
+| `main` | live | Docs + branch READMEs + GitHub Actions workflow |
+| `vanilla-static` | pushed, deploy-ready | Pure HTML/CSS/JS, GitHub Pages, zero build. [README](./BRANCH-README-vanilla.md) |
+| `react-interactive` | pushed, deploy-ready | React + Vite + Framer Motion, drag-to-rearrange polaroids. [README](./BRANCH-README-react.md) |
 
-Both branches share the same `customize.json` schema — copy `customize.json` between branches without editing.
+## Live demo
 
-## Features (MVP P0)
+| Branch | URL |
+|--------|-----|
+| `vanilla-static` | `https://<user>.github.io/love-website/` (after Pages enable) |
+| `react-interactive` | Vercel/Netlify recommended (1-click) |
 
-1. Hero section — SVG letter-by-letter "Untukmu" reveal (anime.js)
-2. Polaroid Memory Timeline — 8-15 foto dengan random rotation, scroll-triggered fade
-3. Typewriter Love Letter — multi-paragraph reveal saat scroll
-4. Confession CTA — "Kamu mau terus bareng aku?" dengan growing Yes + heart confetti
-5. Floating Music Player — autoplay-muted + click-to-unmute
-6. Mobile responsive — tested iOS Safari + Android Chrome
-7. AVIF-friendly image optimization
+## Quick start
 
-## Color Palette — Rose Gold & Blush
+### Vanilla (no install)
+```bash
+git checkout vanilla-static
+python3 -m http.server 8080
+# open http://localhost:8080
+```
 
+### React (dev)
+```bash
+git checkout react-interactive
+npm install
+npm run dev    # http://localhost:5173/love-website/
+```
+
+## Customization (both branches)
+
+Edit `customize.json`:
+
+```json
+{
+  "hero": { "title": "Untukmu", "subtitle": "...", "signature": "..." },
+  "timeline": [
+    { "date": "...", "title": "...", "caption": "...", "image": "https://..." }
+  ],
+  "letter": [ "Paragraf 1...", "Paragraf 2..." ],
+  "cta": {
+    "question": "Kamu mau terus bareng aku?",
+    "yesLabel": "Mau 💕",
+    "noMessages": [ "Yakin?", "Aku mikir lho..." ],
+    "successMessage": "Aku seneng banget 🤍"
+  },
+  "music": { "src": "./assets/music/lagu-kita.mp3", "title": "Lagu kita" }
+}
+```
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `hero.title` | string | SVG letter reveal. Letters: `U N T K R M I L O V E S A C H P Y G D B` |
+| `timeline[].image` | URL/string | Unsplash URL recommended, or `./assets/images/x.jpg` |
+| `letter[]` | string[] | Multi-paragraph. Typewriter reveal saat scroll. |
+| `cta.noMessages` | string[] | Cycle setiap click di No button |
+| `music.src` | URL | Local path or full URL. MP3 max 2MB. |
+
+## Color palette
+
+Rose Gold & Blush:
 - `#F4ACB7` rose gold pink (primary)
 - `#FFD1DC` light blush (secondary)
 - `#E5B299` warm tan (accent)
@@ -30,54 +72,27 @@ Both branches share the same `customize.json` schema — copy `customize.json` b
 - `#5C3A3A` warm dark brown (text)
 - `#D4AF37` gold (CTA highlight)
 
-## Font
+Edit CSS variables di top of `styles.css` (vanilla) atau `src/styles.css` (react) untuk rebrand.
 
-- Heading: Playfair Display
-- Body: Lato
-- Accent: Great Vibes (calligraphy untuk quote)
+## Tech stack
 
-## Customization (no code edit needed)
+- **vanilla-static:** HTML5 + CSS3 + Vanilla JS, CDN libs (anime.js, Swiper, PhotoSwipe, tsParticles, canvas-confetti)
+- **react-interactive:** React 19 + Vite 6 + Framer Motion 12 + canvas-confetti
 
-Edit `customize.json`:
+## Research source
 
-```json
-{
-  "recipient": { "name": "...", "nickname": "..." },
-  "hero": { "title": "Untukmu", "subtitle": "..." },
-  "timeline": [
-    { "date": "...", "title": "...", "caption": "...", "image": "..." }
-  ],
-  "letter": [ "Paragraf 1...", "Paragraf 2..." ],
-  "cta": { "question": "Kamu mau terus bareng aku?", "yesLabel": "Mau", "noMessages": [...] },
-  "music": { "src": "...", "title": "..." }
-}
-```
+`HermesVault/Research/Topics/love-website-prd-final-20260616.md` — PRD aggregating 2 research runs (Animation + Photo Gallery), 16 templates, 12 repos, 19 video tutorials.
 
-See branch README for branch-specific customization.
+## Issues
 
-## Deploy
+| # | Title |
+|---|-------|
+| [#1](https://github.com/qoely/love-website/issues/1) | Project init + customize.json pattern |
+| [#2](https://github.com/qoely/love-website/issues/2) | Build react-interactive branch (✅ done) |
+| [#3](https://github.com/qoely/love-website/issues/3) | Expand research: 10 missing sub-themes |
+| [#4](https://github.com/qoely/love-website/issues/4) | P1 features: 3D heart, AI letter, voice, real-time |
+| [#5](https://github.com/qoely/love-website/issues/5) | Deploy vanilla-static ke GitHub Pages |
 
-```bash
-# Vanilla branch
-git checkout vanilla-static
-git push origin vanilla-static
-# Enable GitHub Pages on vanilla-static branch, / (root)
+## License
 
-# React branch
-git checkout react-interactive
-npm install
-npm run build
-# Deploy dist/ via Vercel/Netlify/GitHub Pages
-```
-
-## Credits
-
-Design patterns & library inspiration:
-- [abandon888/HappyBirthday](https://github.com/abandon888/HappyBirthday) — `customize.json` pattern
-- [visibait/valentines](https://github.com/visibait/valentines) — polaroid heart shape
-- [Ain-Crad/First-Anniversary-of-Love](https://github.com/Ain-Crad/First-Anniversary-of-Love) — timeline structure
-- [CodeKageHQ/Ask-out-your-Valentine](https://github.com/CodeKageHQ/Ask-out-your-Valentine) — growing Yes button
-
-Libraries: anime.js, Swiper.js, PhotoSwipe, tsParticles, canvas-confetti, Framer Motion.
-
-Research source: `/HermesVault/Research/Topics/love-website-prd-final-20260616.md`
+MIT — fork, customize, share freely.
