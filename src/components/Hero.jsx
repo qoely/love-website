@@ -2,32 +2,33 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { LETTER_PATHS } from '../lib/letterPaths.js';
 
-const VIEWBOX_W = 600;
-const VIEWBOX_H = 160;
 const LETTER_W = 70;
+const VIEWBOX_H = 160;
 
 /**
  * Hero section with SVG letter-by-letter "stroke + fill" reveal.
  * Uses pure CSS keyframes (no external lib) for max reliability +
  * smaller bundle. Framer Motion handles the subtitle/signature/scroll
  * fade-up reveals.
+ *
+ * ViewBox width grows with character count so long words like
+ * "TERIMA KASIH" (12 letters) fit naturally.
  */
 export default function Hero({ hero }) {
-  const upper = (hero?.title || 'UNTUKMU').toUpperCase();
+  const upper = (hero?.title || 'TERIMA KASIH').toUpperCase();
+  const viewBoxW = Math.max(600, upper.length * LETTER_W);
 
   useEffect(() => {
-    // Force-restart CSS animation on title change (in case hero remounts)
     const els = document.querySelectorAll('.hero-svg .lttr-stroke, .hero-svg .lttr-fill');
     els.forEach((el) => {
       el.style.animation = 'none';
-      // force reflow
       void el.getBoundingClientRect();
       el.style.animation = '';
     });
   }, [upper]);
 
   const total = upper.length * LETTER_W;
-  const startX = (VIEWBOX_W - total) / 2 + LETTER_W / 2;
+  const startX = (viewBoxW - total) / 2 + LETTER_W / 2;
 
   return (
     <section className="hero" id="hero" aria-label="Pembuka">
@@ -38,13 +39,13 @@ export default function Hero({ hero }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          Dari aku, untukmu
+          dari aku, untukmu
         </motion.p>
 
         <h1 className="hero-title" aria-label={hero?.title}>
           <svg
             className="hero-svg"
-            viewBox={`0 0 ${VIEWBOX_W} ${VIEWBOX_H}`}
+            viewBox={`0 0 ${viewBoxW} ${VIEWBOX_H}`}
             xmlns="http://www.w3.org/2000/svg"
             role="img"
           >

@@ -4,68 +4,62 @@
     "nickname": "sayang"
   },
   "hero": {
-    "title": "Untukmu",
-    "subtitle": "yang sudah menemani hari-hariku",
+    "title": "Terima Kasih",
+    "subtitle": "untuk kamu, yang sudah menemani hari-hariku",
     "signature": "dengan sayang"
   },
   "timeline": [
     {
       "date": "Hari pertama",
       "title": "Saat kita mulai kenal",
-      "caption": "Waktu itu aku belum nyangka, kalau nanti kita sampai sejauh ini.",
-      "image": "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800&q=80&auto=format&fit=crop"
+      "caption": "Aku belum ngerti waktu itu, kalau nanti kita akan sampai sejauh ini.",
+      "image": "https://images.unsplash.com/photo-1518568814500-bf0f8d125f2f?w=800&q=80&auto=format&fit=crop"
     },
     {
       "date": "Momen kecil",
       "title": "Tawa hal-hal sepele",
-      "caption": "Yang bikin aku sadar, aku nyaman banget sama kamu.",
+      "caption": "Yang aku gak sadar bikin aku betah sampai sekarang.",
       "image": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80&auto=format&fit=crop"
     },
     {
       "date": "Hari tenang",
       "title": "Diam-diam bareng",
-      "caption": "Kita gak ngomong apa-apa, tapi semuanya udah cukup.",
+      "caption": "Gak ngomong apa-apa, tapi semuanya udah cukup.",
       "image": "https://images.unsplash.com/photo-1522098635833-216c03d80128?w=800&q=80&auto=format&fit=crop"
     },
     {
       "date": "Hari hujan",
       "title": "Berteduh bareng",
-      "caption": "Hujan deras, kopi panas, dan kamu. Udah lebih dari cukup.",
+      "caption": "Hujan deras, kopi panas, dan kamu. Lebih dari cukup.",
       "image": "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?w=800&q=80&auto=format&fit=crop"
     },
     {
       "date": "Perjalanan",
       "title": "Jalan tanpa tujuan",
-      "caption": "Yang penting bukan destinasinya, tapi kamu yang ada di sebelah.",
+      "caption": "Yang penting bukan destinasinya, tapi kamu di sebelah.",
       "image": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&q=80&auto=format&fit=crop"
     },
     {
       "date": "Hari ini",
       "title": "Bersyukur, masih di sini",
-      "caption": "Aku cuma mau bilang makasih. Sudah ya, segitu aja.",
+      "caption": "Aku cuma mau bilang makasih. Udah ya, segitu aja.",
       "image": "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=800&q=80&auto=format&fit=crop"
     }
   ],
   "letter": [
-    "Hai.",
-    "Aku bukan orang yang jago merangkai kata, tapi malam ini aku pengen coba bilang sesuatu yang udah lama banget aku simpen.",
-    "Makasih ya, udah ada. Bukan cuma di hari-hari yang gampang, tapi juga di hari-hari yang bikin aku pengen nyerah sendiri.",
-    "Kadang aku mikir, gimana ya kalau dulu aku gak ketemu kamu. Mungkin aku masih baik-baik aja, tapi aku juga tahu — hidupku gak akan sehangat sekarang.",
-    "Jadi ini bukan surat cinta yang dramatis. Bukan juga janji-janji besar. Cuma pengen kamu tahu, kalau buat aku, kamu itu rumah. Tempat aku boleh capek, boleh diam, boleh jadi diri sendiri.",
-    "Kalau suatu hari kamu baca ini lagi, semoga kamu senyum dan bilang, 'iya, kita masih di sini.'",
-    "Selalu begitu, ya."
+    "Halo kamu.",
+    "Aku nulis ini bukan karena ada hari spesial. Tapi karena kadang, aku sadar, ada banyak hal yang harusnya aku bilang tapi gak sempat.",
+    "Makasih ya. Udah ada. Dari dulu sampai sekarang. Dari hal-hal kecil yang aku gak sadar, sampai hal-hal besar yang aku gak akan bisa lewatin sendiri.",
+    "Aku gak jago ngomong langsung, makanya aku nulis. Tapi intinya: makasih udah milih untuk tetap di sini, dari semua kemungkinan yang ada.",
+    "Kita mungkin gak sempurna. Tapi kita nyata. Dan buat aku, nyata itu lebih dari cukup.",
+    "Kalau kamu baca ini, anggap aja ini pelukan yang gak bisa aku kasih langsung.",
+    "Tetep di sini ya. Kapanpun kamu butuh, aku juga di sini."
   ],
-  "cta": {
-    "question": "Kamu mau terus bareng aku?",
-    "yesLabel": "Mau 💕",
-    "noMessages": [
-      "Yakin nih? 🥺",
-      "Aku mikir lho...",
-      "Aku sedih nih :(",
-      "Oke deh, aku tunggu...",
-      "Coba dipikirin lagi 💖"
-    ],
-    "successMessage": "Aku seneng banget. Yuk lanjut bareng 🤍"
+  "closing": {
+    "eyebrow": "kalau kamu baca sampai sini",
+    "headline": "Makasih ya.",
+    "sub": "Kamu udah sampai sini bersamaku. Itu sudah lebih dari cukup.",
+    "footnote": "dengan sayang, untuk yang sudah di sini."
   },
   "music": {
     "src": "",
@@ -74,7 +68,7 @@
   },
   "meta": {
     "language": "id",
-    "createdAt": "2026-06-16",
-    "purpose": "personal-appreciation"
+    "createdAt": "2026-06-17",
+    "purpose": "romantic-thanks"
   }
 }

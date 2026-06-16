@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Hero from './components/Hero.jsx';
 import LetterSection from './components/LetterSection.jsx';
 import MemoryTimeline from './components/MemoryTimeline.jsx';
-import ConfessionCTA from './components/ConfessionCTA.jsx';
+import ClosingNote from './components/ClosingNote.jsx';
 import MusicPlayer from './components/MusicPlayer.jsx';
 import BackgroundHearts from './components/BackgroundHearts.jsx';
 
@@ -49,7 +49,7 @@ export default function App() {
       <Hero hero={cfg.hero} />
       <LetterSection paragraphs={cfg.letter} />
       <MemoryTimeline items={cfg.timeline} />
-      <ConfessionCTA cta={cfg.cta} />
+      <ClosingNote closing={cfg.closing} />
       <footer className="site-footer">
         <p>dibuat dengan sayang, khusus untuk kamu.</p>
         <p className="site-footer-meta">
